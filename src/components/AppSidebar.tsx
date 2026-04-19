@@ -25,7 +25,7 @@ import {
 
 const items = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "Contract Management", url: "/contracts", icon: FileText },
+  { title: "Contract Management", url: "/contracts" },
   { title: "Vehicle Management", url: "/vehicles", icon: Truck },
   { title: "Log Sheets", url: "/logsheets", icon: ClipboardList },
   { title: "Driver Management", url: "/drivers", icon: Users },
@@ -85,7 +85,7 @@ export function AppSidebar() {
                       }`}
                     >
                       <NavLink to={item.url} end={item.url === "/"}>
-                        <item.icon className="h-[18px] w-[18px] shrink-0" />
+                        {item.icon && <item.icon className="h-[18px] w-[18px] shrink-0" />}
                         {!collapsed && <span className="text-sm">{item.title}</span>}
                       </NavLink>
                     </SidebarMenuButton>
